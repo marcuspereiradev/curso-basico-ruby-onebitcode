@@ -1,0 +1,22 @@
+marcus@marcus:~$ cd Desktop/ruby/
+marcus@marcus:~/Desktop/ruby$ ruby hello-onebitcode.rb 
+Olá Mundo!
+marcus@marcus:~/Desktop/ruby$ ruby hello-onebitcode.rb 
+Olá Mundo!
+4
+marcus@marcus:~/Desktop/ruby$ irb
+irb(main):001:0> puts 'hello Mundo 2'
+hello Mundo 2
+=> nil
+irb(main):002:0> puts 5*5
+25
+=> nil
+irb(main):003:0> exit
+marcus@marcus:~/Desktop/ruby$ cd curso-básico-onebitcode/aula1/
+marcus@marcus:~/Desktop/ruby/curso-básico-onebitcode/aula1$ ruby hello-onebitcode.rb 
+Olá Mundo!
+4
+marcus@marcus:~/Desktop/ruby/curso-básico-onebitcode/aula1$ ruby challenge-01.rb 
+Curso de Ruby do OneBitCode
+marcus@marcus:~/Desktop/ruby/curso-básico-onebitcode/aula1$ 
+
