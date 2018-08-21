@@ -6,18 +6,33 @@
 
 require "cpf_cnpj"
 
-puts "Informe o seu CPF: "
-number = gets.chomp.to_i
+loop do
+    def cpf_valid?
+        puts "Informe o seu CPF: "
+        number = gets.chomp
 
-def CPF(number)
-    CPF.valid?(number)    # Check if a CPF is valid
-    CPF.generate          # Generate a random CPF number
-    CPF.generate(true)    # Generate a formatted number
+        def CPF(number)
+            cpf = CPF.new(number)
+            cpf.formatted         # Return formatted CPF (xxx.xxx.xxx-xx)
+            cpf.stripped          # Return stripped CPF (xxxxxxxxxxx)
+            cpf.valid?            # Check if CPF is valid
 
-    cpf = CPF.new(number)
-    cpf.formatted         # Return formatted CPF (xxx.xxx.xxx-xx)
-    cpf.stripped          # Return stripped CPF (xxxxxxxxxxx)
-    cpf.valid?            # Check if CPF is valid
-end
+            if cpf.valid?
+                puts "Este CPF é válido!"
+            else
+                puts "Este CPF não é válido!"
+            end
+        end
+        CPF(number)
+    end
 
-CPF(number) 
+    cpf_valid?
+
+    puts "Deseja continuar? (S/N)"
+    resposta = gets.chomp.upcase
+    if resposta == "S"
+        cpf_valid?
+    elsif resposta == "N"
+        break
+    end
+end 
