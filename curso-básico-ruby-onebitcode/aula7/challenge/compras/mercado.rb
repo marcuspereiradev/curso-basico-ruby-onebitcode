@@ -1,7 +1,6 @@
 class Mercado < Produto
-    def initialize(name, price)
-        @name = name
-        @price = price
+    def initialize(produto)
+        @produto = produto
     end
     
     def comprar
