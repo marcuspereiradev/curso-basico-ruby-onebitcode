@@ -31,6 +31,5 @@ produto = Produto.new
 produto.nome = "Carne"
 produto.preco = 17
 
-mercado = Mercado.new
-mercado.nome
+mercado = Mercado.new(produto)
 mercado.comprar
