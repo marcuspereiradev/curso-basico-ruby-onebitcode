@@ -1,0 +1,2 @@
+Retorna so o text do body
+Returns only the text of the body
