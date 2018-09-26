@@ -23,7 +23,7 @@ class Translator
 		print 'Digite o idioma que deseja traduzir: '
 		@language_translate = gets.chomp.to_s.downcase
 	end
-	
+
 	def translating
 		response = RestClient.get(@url, params: {key: @key, text: @text, lang: @lang})
 		@result = JSON.parse(response)["text"]
@@ -37,7 +37,7 @@ class Translator
 		puts @result
 		puts "\n\n"
 	end
-	
+
 	def save
 		name_txt = Time.new.strftime('%d-%m-%y_%H:%M') + '.txt'
 		File.open(name_txt, 'a') do |line|
@@ -47,7 +47,10 @@ class Translator
 		end
 		puts "Salvo com sucesso em .txt!"
 	end
-	
+
+end
+
+def start_translate
 	loop do
 		start = Translator.new
 		start.translating
@@ -64,5 +67,4 @@ class Translator
 			next
 		end
 	end
-
 end
